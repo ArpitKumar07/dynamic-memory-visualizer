@@ -24,3 +24,4 @@ A comprehensive C program to simulate and visualize memory management techniques
 - Color-coded output for better readability
 
 ## Project Structure
+\n## Installation
