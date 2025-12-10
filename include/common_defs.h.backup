@@ -1,0 +1,64 @@
+#ifndef COMMON_DEFS_H
+#define COMMON_DEFS_H
+
+#include <stdbool.h>
+
+#define MAX_FRAMES 10
+#define MAX_PAGES 20
+#define MAX_SEGMENTS 10
+#define MAX_PROCESSES 5
+#define PAGE_SIZE 4096
+#define SEGMENT_SIZE 8192
+
+typedef struct {
+    int frame_id;
+    int page_number;
+    int process_id;
+    int load_time;
+    int last_access;
+    int reference_bit;
+    bool dirty;
+    bool is_free;
+} MemoryFrame;
+
+typedef struct {
+    int page_number;
+    int frame_number;
+    bool valid;
+    bool present;
+    bool referenced;
+    bool modified;
+    int protection;
+} PageTableEntry;
+
+typedef struct {
+    int segment_id;
+    int base_address;
+    int limit;
+    bool valid;
+    int protection;
+} SegmentTableEntry;
+
+typedef struct {
+    int pid;
+    char name[50];
+    PageTableEntry page_table[MAX_PAGES];
+    SegmentTableEntry segment_table[MAX_SEGMENTS];
+    int page_faults;
+    int memory_usage;
+    int page_count;  // ADDED THIS
+} Process;
+
+typedef struct {
+    int total_page_faults;
+    int total_hits;
+    int total_references;
+    double hit_ratio;
+    double fault_ratio;
+    double avg_access_time;
+} Statistics;
+
+#endif
+EOF 
+
+
