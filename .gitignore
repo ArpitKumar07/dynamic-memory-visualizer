@@ -1,0 +1,17 @@
+# Compiled files
+*.exe
+*.out
+*.o
+memory_visualizer
+
+# Build directories
+build/
+
+# IDE files
+.vscode/
+
+# Log files
+*.log
+
+# System files
+.DS_Store
