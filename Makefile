@@ -112,3 +112,4 @@ help:
 
 # Phony targets
 .PHONY: all clean run debug release valgrind gdb install-deps init help
+# Build target
